@@ -1,0 +1,56 @@
+background no
+use_xft yes
+xftfont inconsolata:size=10
+xftalpha 0.8
+update_interval 1.0
+total_run_times 0
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,below,skip_taskbar,sticky,skip_pager
+double_buffer yes
+#minimum_size 280 5
+draw_shades no
+draw_outline yes
+draw_graph_borders yes
+stippled_borders 8
+border_margin 4
+border_width 1
+maximum_width 300
+default_color white
+default_shade_color black
+default_outline_color black
+alignment bottom_left
+gap_x 1285
+gap_y 90
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+net_avg_samples 2
+override_utf8_locale no
+use_spacer yes
+#on_bottom yes
+#own_window_type desktop
+
+TEXT
+
+${color #0087AF}Uptime : $color $uptime - load : $loadavg
+${color #0087AF}Processes :$color $processes total and $running_processes running
+${color #0087AF}CPU :$color $cpu% ${cpubar}
+${color #0087AF}RAM :$color $memperc% ${membar}
+${color #0087AF}Swap :$color $swapperc% ${swapbar}
+${color #0087AF}/ :$color ${fs_free /}/${fs_size /} ${fs_bar /}
+
+${color #0087AF}Networking
+${color #0087AF}Down :$color ${downspeed eth0} k/s    ${color #0087AF}Up :$color ${upspeed eth0} k/s
+${downspeedgraph eth0 32,145 FFFFFF 0087AF} ${upspeedgraph eth0 32,145 FFFFFF 0087AF}
+
+${color #0087AF}Name              PID     CPU%   MEM%
+$color ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+ ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+ ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+
+${color #0087AF}Name              PID     CPU%   MEM%
+$color ${top_mem name 1} ${top_mem pid 1} ${top_mem cpu 1} ${top_mem mem 1}
+ ${top_mem name 2} ${top_mem pid 2} ${top_mem cpu 2} ${top_mem mem 2}
+ ${top_mem name 3} ${top_mem pid 3} ${top_mem cpu 3} ${top_mem mem 3}
